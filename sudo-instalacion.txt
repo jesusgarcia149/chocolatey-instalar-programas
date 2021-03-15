@@ -1,0 +1,9 @@
+#Utiliza el comando Sudo en Windows para ejecutar aplicaciones como Administrador
+
+EJ: sudo cmd
+
+Instalacion #1
+Para que Sudo se pueda ejecutar como un comando más desde MS-DOS debemos copiar el ejecutable a una ruta conocida y añadir esta a las variables de entorno del sistema. 
+
+Instalacion #2
+Una alternativa mucho más sencilla para hacerlo funcionar es copiar el archivo sudo.exe y pegarlo en C:Windows. Esta ruta ya está por defecto en el PATH del sistema, por lo que automáticamente nos reconocerá el comando.

@@ -1,0 +1,1 @@
+choco install sublimetext3 xampp-73 git cygwin -y && choco install nodejs-lts --version=10.13.0 -y
