@@ -9,9 +9,12 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 #If your System is Windows 7 need install Windows6.1-KB2506143-x64
 #Si tu sistema es windows 7 necesitas instalar Windows6.1-KB2506143-x64
 
+#si tienes problemas con la instalacion de chocolatey
+choco upgrade
+
 #instalacion de aplicaciones
 
-choco install firefox thunderbird whatsapp telegram 7zip anydesk audacity clavier-plus clementine clover ditto etcher googlechrome libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc xdm -y && choco install dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+choco install firefox thunderbird kb2533623 kb2670838 whatsapp telegram 7zip anydesk audacity clavier-plus clementine clover ditto etcher googlechrome inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc wnetwatcher xdm -y && choco install dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
 choco install megasync -y
 
 #aplicaciones faltantes
