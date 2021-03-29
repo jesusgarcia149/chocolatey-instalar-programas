@@ -1,0 +1,89 @@
+With PowerShell, you must ensure Get-ExecutionPolicy is not Restricted. We suggest using Bypass to bypass the policy to get things installed or AllSigned for quite a bit more security.
+
+    Run Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process.
+
+Now run the following command:
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+#If your System is Windows 7 64 bits need install Windows6.1-KB2506143-x64
+#Si tu sistema es windows 7 64 bits necesitas instalar Windows6.1-KB2506143-x64
+
+#If your System is Windows 7 32 bits need install Windows6.1-KB2506143-x86
+#Si tu sistema es windows 7 32 bits necesitas instalar Windows6.1-KB2506143-x86
+
+#si tienes problemas con la instalacion de chocolatey
+choco upgrade
+
+####################################################################################################
+#instalacion de aplicaciones (modo cliente)
+choco install googlechrome firefox libreoffice vlc -y
+
+####################################################################################################
+#instalacion de aplicaciones (modo usuario)
+choco install firefox thunderbird kb2533623 kb2670838 whatsapp telegram 7zip anydesk audacity clavier-plus clementine clover ditto etcher googlechrome inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+choco install megasync -y
+
+####################################################################################################
+#instalacion de aplicaciones (modo desarrollador (necesitamos introducir el comando en cygwin y tenerlo previamente instalado))
+
+choco install firefox thunderbird kb2533623 kb2670838 whatsapp telegram 7zip anydesk audacity clavier-plus clementine clover ditto etcher googlechrome inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+#choco install megasync -y
+
+choco install vscode xampp-73 git cygwin sudo -y && choco install nodejs-lts --version=10.13.0 -y
+#choco install sublimetext3 -y
+
+directorio=C:\xampp
+cd $directorio
+cd htdocs
+# almacenamos todos los archivos que estan dentro de htdocs en una carpeta llamada lamp
+mkdir htdocs-files
+mv ./dashboard ./htdocs-files
+mv ./img ./htdocs-files
+mv ./webalizer ./htdocs-files
+mv ./xampp ./htdocs-files
+mv ./applications.html ./htdocs-files
+mv ./bitnami.css ./htdocs-files
+mv ./favicon.ico ./htdocs-files
+mv ./index.php ./htdocs-files
+
+# creamos el archivo info.php
+touch info.php
+chmod 777 info.php
+info='<?php phpinfo(); ?>'
+echo $info > info.php
+
+# almacenamos mis proyectos dentro de una carpeta llamada apps
+mkdir apps
+cd ./apps
+#sudo git clone https://github.com/jesusgarcia149/js-angular-crud.git
+#sudo git clone https://github.com/jesusgarcia149/php-laravel-api.git
+git clone https://github.com/jesusgarcia149/php-crud.git
+git clone https://github.com/jesusgarcia149/php-crud-with-images.git
+git clone https://github.com/jesusgarcia149/php-auth-system.git
+git clone https://github.com/jesusgarcia149/php-tienda.git
+git clone https://github.com/jesusgarcia149/js-planificador-de-rutas.git
+git clone https://github.com/jesusgarcia149/js-vuejs-cms.git
+git clone https://github.com/jesusgarcia149/js-localstorage-crud.git
+git clone https://github.com/jesusgarcia149/js-pong.git
+git clone https://github.com/jesusgarcia149/bash-ubuntu-instalar-programas.git
+git clone https://github.com/jesusgarcia149/js-nodejs.git
+git clone https://github.com/jesusgarcia149/js-nodejs-first-page.git
+git clone https://github.com/jesusgarcia149/js-nodejs-mysql-crud.git
+git clone https://github.com/jesusgarcia149/chocolatey-instalar-programas.git
+
+# instalamos las dependencias necesarias para los proyectos en nodejs
+cd ./js-nodejs
+npm install
+cd ../
+cd ./js-nodejs-first-page
+npm install
+cd ../
+cd ./js-nodejs-mysql-crud
+npm install
+cd ../
+
+####################################################################################################
+#aplicaciones faltantes
+
+unlocker
