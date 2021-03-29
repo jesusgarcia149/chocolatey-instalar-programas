@@ -1,3 +1,0 @@
-NODE_PATH = %AppData%\npm\node_modules
-NPM = C:\Users\Jesus\AppData\Roaming\npm
-JUST-INSTALL = C:\Windows
