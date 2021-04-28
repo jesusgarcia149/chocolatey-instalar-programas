@@ -30,12 +30,12 @@
 : ####################################################################################################
 : #para correr este comando abre la terminal en el directorio del archivo e introduce el siguiente comando:
 : #Chocolatey-instalar-programas-basicos.bat
-: #o corre el archivo como administrador
 
 : necesarios para whatsapp y kodi:
 : kb2533623 kb2670838
+: firefoxesr thunderbird whatsapp telegram googlechrome 
 
-choco install firefoxesr thunderbird  whatsapp telegram 7zip anydesk audacity clavier-plus clementine clover ditto etcher googlechrome inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+choco install brave 7zip anydesk audacity clavier-plus clementine clover ditto etcher inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
 
 choco install vscode xampp-73 git cygwin sudo -y
 choco install nodejs-lts --version=10.13.0 -y 
@@ -80,6 +80,66 @@ cd ../
 cd ./js-nodejs-mysql-crud
 npm install
 cd ../
+
+: ####################################################################################################
+: #para correr este comando tienes que tener instalado en programa cygwin y pegar los comandos
+
+: #comandos por partes
+: #choco install firefoxesr thunderbird kb2533623 kb2670838 whatsapp telegram 7zip anydesk audacity clavier-plus clementine clover ditto etcher googlechrome inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+: #choco install megasync -y
+
+: #choco install vscode xampp-73 git cygwin sudo -y && choco install nodejs-lts --version=10.13.0 -y
+: #choco install sublimetext3 -y
+
+: #directorio=C:\xampp
+: #cd $directorio
+: #cd htdocs
+: #almacenamos todos los archivos que estan dentro de htdocs en una carpeta llamada lamp
+: #mkdir htdocs-files
+: #mv ./dashboard ./htdocs-files
+: #mv ./img ./htdocs-files
+: #mv ./webalizer ./htdocs-files
+: #mv ./xampp ./htdocs-files
+: #mv ./applications.html ./htdocs-files
+: #mv ./bitnami.css ./htdocs-files
+: #mv ./favicon.ico ./htdocs-files
+: #mv ./index.php ./htdocs-files
+
+: #creamos el archivo info.php
+: #touch info.php
+: #chmod 777 info.php
+: #info='<?php phpinfo(); ?>'
+: #echo $info > info.php
+
+: #almacenamos mis proyectos dentro de una carpeta llamada apps
+: #mkdir apps
+: #cd ./apps
+: #sudo git clone https://github.com/jesusgarcia149/js-angular-crud.git
+: #sudo git clone https://github.com/jesusgarcia149/php-laravel-api.git
+: #git clone https://github.com/jesusgarcia149/php-crud.git
+: #git clone https://github.com/jesusgarcia149/php-crud-with-images.git
+: #git clone https://github.com/jesusgarcia149/php-auth-system.git
+: #git clone https://github.com/jesusgarcia149/php-tienda.git
+: #git clone https://github.com/jesusgarcia149/js-planificador-de-rutas.git
+: #git clone https://github.com/jesusgarcia149/js-vuejs-cms.git
+: #git clone https://github.com/jesusgarcia149/js-localstorage-crud.git
+: #git clone https://github.com/jesusgarcia149/js-pong.git
+: #git clone https://github.com/jesusgarcia149/bash-ubuntu-instalar-programas.git
+: #git clone https://github.com/jesusgarcia149/js-nodejs.git
+: #git clone https://github.com/jesusgarcia149/js-nodejs-first-page.git
+: #git clone https://github.com/jesusgarcia149/js-nodejs-mysql-crud.git
+: #git clone https://github.com/jesusgarcia149/chocolatey-instalar-programas.git
+
+: # instalamos las dependencias necesarias para los proyectos en nodejs
+: #cd ./js-nodejs
+: : #npm install
+: #cd ../
+: #cd ./js-nodejs-first-page
+: #npm install
+: #cd ../
+: #cd ./js-nodejs-mysql-crud
+: #npm install
+: #cd ../
 
 :  ####################################################################################################
 :  #aplicaciones faltantes
