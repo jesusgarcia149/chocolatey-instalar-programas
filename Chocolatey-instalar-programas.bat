@@ -16,15 +16,6 @@
 : #choco upgrade
 
 : ####################################################################################################
-: #instalacion de aplicaciones (modo cliente)
-: #choco install googlechrome firefoxesr libreoffice vlc -y
-
-: ####################################################################################################
-: #instalacion de aplicaciones (modo usuario)
-: #choco install firefoxesr thunderbird kb2533623 kb2670838 whatsapp telegram 7zip anydesk audacity clavier-plus clementine clover ditto etcher googlechrome inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
-: #choco install megasync -y
-
-: ####################################################################################################
 : #instalacion de aplicaciones (modo desarrollador (necesitamos introducir el comando en cygwin y tenerlo previamente instalado))
 
 : ####################################################################################################
@@ -33,9 +24,12 @@
 
 : necesarios para whatsapp y kodi:
 : kb2533623 kb2670838
-: firefoxesr thunderbird whatsapp telegram googlechrome 
 
-choco install brave 7zip anydesk audacity clavier-plus clementine clover ditto etcher inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf vlc wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+: algunas aplicaciones faltantes
+: firefoxesr googlechrome thunderbird whatsapp telegram
+: vlc clementine
+
+choco install brave k-litecodecpackfull 7zip anydesk audacity clavier-plus clover ditto etcher inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
 
 choco install vscode xampp-73 git cygwin sudo -y
 choco install nodejs-lts --version=10.13.0 -y 
