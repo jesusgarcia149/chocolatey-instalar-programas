@@ -27,10 +27,10 @@
 
 : algunas aplicaciones faltantes
 : firefoxesr googlechrome thunderbird whatsapp telegram
-: vlc clementine
+: k-litecodecpackfull clementine
 
 choco install chocolateygui -y
-choco install brave firefoxesr googlechrome k-litecodecpackfull 7zip anydesk audacity clavier-plus clover ditto etcher inkscape libreoffice naps2 nettime rufus qbittorrent sumatrapdf wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+choco install brave googlechrome firefoxesr vlc libreoffice sumatrapdf 7zip anydesk audacity clavier-plus clover ditto etcher inkscape naps2 nettime rufus qbittorrent wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
 
 choco install vscode xampp-73 git cygwin sudo -y
 choco install nodejs-lts --version=10.13.0 -y 
