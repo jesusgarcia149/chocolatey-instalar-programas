@@ -28,6 +28,8 @@
 : algunas aplicaciones faltantes
 : firefoxesr thunderbird whatsapp telegram
 : k-litecodecpackfull clementine
+
+: servicios de google
 : choco install google-backup-and-sync -y
 
 choco install chocolateygui -y
