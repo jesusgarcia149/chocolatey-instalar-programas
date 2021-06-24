@@ -28,6 +28,7 @@
 : algunas aplicaciones faltantes
 : firefoxesr thunderbird whatsapp telegram
 : k-litecodecpackfull clementine
+: choco install google-backup-and-sync -y
 
 choco install chocolateygui -y
 choco install brave googlechrome firefox vlc libreoffice-still sumatrapdf 7zip anydesk audacity clavier-plus clover ditto etcher gimp inkscape jdownloader lockhunter naps2 nettime rufus qbittorrent wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 jre8 -y
