@@ -25,21 +25,24 @@
 : necesarios para whatsapp y kodi:
 : kb2533623 kb2670838
 
-: algunas aplicaciones faltantes
-: firefoxesr thunderbird whatsapp telegram
-: k-litecodecpackfull clementine
+: algunas aplicaciones en las que prodria estar interesado
+: firefoxesr thunderbird whatsapp telegram k-litecodecpackfull clementine vscode
 
-: servicios de google
-: choco install google-backup-and-sync -y
-
-choco install chocolateygui -y
+: programas basicos
 choco install brave googlechrome firefox vlc libreoffice-still sumatrapdf 7zip anydesk audacity clavier-plus clover ditto etcher gimp inkscape jdownloader lockhunter naps2 nettime rufus qbittorrent wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 jre8 -y
 
-: algunas aplicaciones faltantes
-: vscode
+: tienda de chocolatey
+choco install chocolateygui -y
+
+: servicios de google
+choco install google-backup-and-sync -y
+
+: programacion
 
 choco install sublimetext3 xampp-73 git cygwin sudo -y
 choco install nodejs-lts --version=10.13.0 -y 
+
+: instalacion de mis repositorios en github
 
 cd C:\xampp
 cd htdocs
