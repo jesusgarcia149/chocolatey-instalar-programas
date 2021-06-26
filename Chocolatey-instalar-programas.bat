@@ -40,8 +40,11 @@ choco install anydesk audacity clavier-plus clover ditto etcher gimp inkscape jd
 : complementos
 choco install dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 jre8 -y
 
+: complemento para instalar whatsapp
+choco install kb2533623 -y
+
 : Aplicaciones tipicas de Android
-choco install kb2533623 whatsapp telegram -y
+choco install whatsapp telegram -y
 
 : cliente de correo electrinico
 choco install thunderbird -y
