@@ -62,9 +62,6 @@ choco install chocolateygui -y
 choco install sublimetext3 xampp-73 git sudo -y
 choco install nodejs-lts --version=10.13.0 -y 
 
-: aplicaciones faltantes en programacion
-: choco install cygwin vscode -y
-
 
 
 
@@ -115,4 +112,7 @@ cd ../
 
 
 : algunas aplicaciones en las que prodria estar interesado
-: choco install thunderbird k-litecodecpackfull clementine -y
+: choco install k-litecodecpackfull clementine -y
+
+: aplicaciones faltantes en programacion
+: choco install cygwin vscode -y
