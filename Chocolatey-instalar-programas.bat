@@ -6,6 +6,12 @@
 
 : #Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+
+
+
+: Para instalar chocolatey corre el siguiente comando como administrador:
+: #Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
 : #If your System is Windows 7 64 bits need install Windows6.1-KB2506143-x64
 : #Si tu sistema es windows 7 64 bits necesitas instalar Windows6.1-KB2506143-x64
 
@@ -22,25 +28,42 @@
 : #para correr este comando abre la terminal en el directorio del archivo e introduce el siguiente comando:
 : #Chocolatey-instalar-programas-basicos.bat
 
-: necesarios para whatsapp y kodi:
-: kb2533623 kb2670838
 
-: algunas aplicaciones en las que prodria estar interesado
-: firefoxesr thunderbird whatsapp telegram k-litecodecpackfull clementine vscode
+
 
 : programas basicos
-choco install brave googlechrome firefox vlc libreoffice-still sumatrapdf 7zip anydesk audacity clavier-plus clover ditto etcher gimp inkscape jdownloader lockhunter naps2 nettime rufus qbittorrent wnetwatcher xdm dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 jre8 -y
+choco install brave googlechrome firefox vlc libreoffice-still sumatrapdf 7zip -y
+
+: programas avanzados
+choco install anydesk audacity clavier-plus clover ditto etcher gimp inkscape jdownloader lockhunter naps2 nettime rufus qbittorrent wnetwatcher xdm -y
+
+: complementos
+choco install dotnet4.7.2 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 jre8 -y
+
+: Aplicaciones tipicas de Android
+choco install kb2533623 whatsapp telegram -y
+
+: cliente de correo electrinico
+choco install thunderbird -y
+
+: servicios de google
+choco install googlechrome google-backup-and-sync -y
+
+: Servicios de television
+choco install pluto-tv -y
 
 : tienda de chocolatey
 choco install chocolateygui -y
 
-: servicios de google
-choco install google-backup-and-sync -y
-
 : programacion
-
-choco install sublimetext3 xampp-73 git cygwin sudo -y
+choco install sublimetext3 xampp-73 git sudo -y
 choco install nodejs-lts --version=10.13.0 -y 
+
+: aplicaciones faltantes en programacion
+: choco install cygwin vscode -y
+
+
+
 
 : instalacion de mis repositorios en github
 
@@ -84,3 +107,9 @@ cd ../
 cd ./js-nodejs-mysql-crud
 npm install
 cd ../
+
+
+
+
+: algunas aplicaciones en las que prodria estar interesado
+: choco install thunderbird k-litecodecpackfull clementine -y
