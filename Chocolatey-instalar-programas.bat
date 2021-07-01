@@ -35,7 +35,7 @@
 choco install brave googlechrome firefox vlc libreoffice-still sumatrapdf 7zip -y
 
 : programas avanzados
-choco install anydesk audacity clavier-plus clover ditto etcher gimp inkscape jdownloader lockhunter naps2 nettime rufus qbittorrent wnetwatcher xdm -y
+choco install anydesk clavier-plus clover ditto etcher jdownloader lockhunter naps2 nettime rufus qbittorrent wnetwatcher xdm -y
 
 : complementos
 choco install dotnet4.7.2 directx jre8 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
@@ -52,15 +52,22 @@ choco install thunderbird -y
 : servicios de google
 choco install googlechrome google-backup-and-sync -y
 
+: gadgets
+choco install 8gadgetpack -y
+
 : Servicios de television
 choco install pluto-tv -y
 
 : tienda de chocolatey
 choco install chocolateygui -y
 
+: produccion multimedia
+choco install gimp --version 2.10.14 -y
+choco install inkscape audacity formatfactory -y
+
 : programacion
 choco install sublimetext3 xampp-73 git sudo -y
-choco install nodejs-lts --version=10.13.0 -y 
+choco install nodejs-lts --version=10.13.0 -y
 
 
 
