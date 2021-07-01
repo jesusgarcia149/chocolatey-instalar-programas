@@ -19,10 +19,8 @@
 : #Si tu sistema es windows 7 32 bits necesitas instalar Windows6.1-KB2506143-x86
 
 : #si tienes problemas con la instalacion de chocolatey
+: choco install audacity --force
 : #choco upgrade
-
-: ####################################################################################################
-: #instalacion de aplicaciones (modo desarrollador (necesitamos introducir el comando en cygwin y tenerlo previamente instalado))
 
 : ####################################################################################################
 : #para correr este comando abre la terminal en el directorio del archivo e introduce el siguiente comando:
@@ -31,93 +29,369 @@
 
 
 
-: programas basicos
-choco install brave googlechrome firefox vlc libreoffice-still sumatrapdf 7zip -y
+@echo off
 
-: programas avanzados
-choco install anydesk clavier-plus clover ditto etcher jdownloader lockhunter naps2 nettime rufus qbittorrent wnetwatcher xdm -y
+: comprobacion
+:inicio
+set /p todo=Quieres instalar todas las aplicaciones? ("y" or "n") ...
 
-: complementos
-choco install dotnet4.7.2 directx jre8 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+: instalar todo
+if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 
-: complemento para instalar whatsapp
-choco install kb2533623 -y
+	:todo
+	: navegadores
+	choco install brave googlechrome firefox -y
 
-: Aplicaciones tipicas de Android
-choco install whatsapp telegram -y
+	: reproductor multimedia
+	choco install vlc -y
 
-: cliente de correo electrinico
-choco install thunderbird -y
+	: offimatica
+	choco install libreoffice-still sumatrapdf naps2 -y
 
-: servicios de google
-choco install googlechrome google-backup-and-sync -y
+	: compresion
+	choco install 7zip -y
 
-: gadgets
-choco install 8gadgetpack -y
+	: gestores de descargas
+	choco install megasync --version 3.1.4 -y
+	choco install qbittorrent xdm jdownloader -y
 
-: Servicios de television
-choco install pluto-tv -y
+	: runtimes
+	choco install dotnet4.7.2 directx jre8 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+	
+	: gadgets y complementos a windows
+	choco install 8gadgetpack clavier-plus clover ditto nettime lockhunter -y
 
-: tienda de chocolatey
-choco install chocolateygui -y
+	: monitorear conectados a la red
+	choco install wnetwatcher -y
 
-: produccion multimedia
-choco install gimp --version 2.10.14 -y
-choco install inkscape audacity formatfactory -y
+	: asistencia remota
+	choco install anydesk -y 
 
-: programacion
-choco install sublimetext3 xampp-73 git sudo -y
-choco install nodejs-lts --version=10.13.0 -y
+	: usb de arranque
+	choco install rufus etcher -y
 
+	: complemento para instalar whatsapp
+	choco install kb2533623 -y
 
+	: Aplicaciones tipicas de Android de Mensajeria
+	choco install whatsapp telegram -y
 
+	: cliente de correo electrinico
+	choco install thunderbird -y
 
-: instalacion de mis repositorios en github
+	: servicios de google
+	choco install googlechrome google-backup-and-sync -y
 
-cd C:\xampp
-cd htdocs
+	: Servicios de television
+	choco install pluto-tv -y
 
-mkdir htdocs-files
+	: tienda de chocolatey
+	choco install chocolateygui -y
 
-MOVE ./dashboard ./htdocs-files
-MOVE ./img ./htdocs-files
-MOVE ./webalizer ./htdocs-files
-MOVE ./xampp ./htdocs-files
-move ./applications.html ./htdocs-files
-move ./bitnami.css ./htdocs-files
-move ./favicon.ico ./htdocs-files
-#move ./index.php ./htdocs-files
+	: produccion multimedia
+	choco install gimp --version 2.10.14 -y
+	choco install inkscape audacity formatfactory -y
 
-mkdir apps
-cd ./apps 
-
-git clone https://github.com/jesusgarcia149/php-crud.git
-git clone https://github.com/jesusgarcia149/php-crud-with-images.git 
-git clone https://github.com/jesusgarcia149/php-auth-system.git
-git clone https://github.com/jesusgarcia149/php-tienda.git
-git clone https://github.com/jesusgarcia149/js-planificador-de-rutas.git
-git clone https://github.com/jesusgarcia149/js-vuejs-cms.git 
-git clone https://github.com/jesusgarcia149/js-localstorage-crud.git
-git clone https://github.com/jesusgarcia149/js-pong.git
-git clone https://github.com/jesusgarcia149/bash-ubuntu-instalar-programas.git
-git clone https://github.com/jesusgarcia149/js-nodejs.git
-git clone https://github.com/jesusgarcia149/js-nodejs-first-page.git
-git clone https://github.com/jesusgarcia149/js-nodejs-mysql-crud.git
-git clone https://github.com/jesusgarcia149/chocolatey-instalar-programas.git
-
-cd ./js-nodejs
-npm install
-cd ../
-cd ./js-nodejs-first-page
-npm install
-cd ../
-cd ./js-nodejs-mysql-crud
-npm install
-cd ../
+	: programacion
+	choco install sublimetext3 xampp-73 git sudo -y
+	choco install nodejs-lts --version=10.13.0 -y
 
 
 
 
+	: instalacion de mis repositorios en github
+
+	cd C:\xampp
+	cd htdocs
+
+	mkdir htdocs-files
+
+	MOVE ./dashboard ./htdocs-files
+	MOVE ./img ./htdocs-files
+	MOVE ./webalizer ./htdocs-files
+	MOVE ./xampp ./htdocs-files
+	move ./applications.html ./htdocs-files
+	move ./bitnami.css ./htdocs-files
+	move ./favicon.ico ./htdocs-files
+	#move ./index.php ./htdocs-files
+
+	mkdir apps
+	cd ./apps 
+
+	git clone https://github.com/jesusgarcia149/php-crud.git
+	git clone https://github.com/jesusgarcia149/php-crud-with-images.git 
+	git clone https://github.com/jesusgarcia149/php-auth-system.git
+	git clone https://github.com/jesusgarcia149/php-tienda.git
+	git clone https://github.com/jesusgarcia149/js-planificador-de-rutas.git
+	git clone https://github.com/jesusgarcia149/js-vuejs-cms.git 
+	git clone https://github.com/jesusgarcia149/js-localstorage-crud.git
+	git clone https://github.com/jesusgarcia149/js-pong.git
+	git clone https://github.com/jesusgarcia149/bash-ubuntu-instalar-programas.git
+	git clone https://github.com/jesusgarcia149/js-nodejs.git
+	git clone https://github.com/jesusgarcia149/js-nodejs-first-page.git
+	git clone https://github.com/jesusgarcia149/js-nodejs-mysql-crud.git
+	git clone https://github.com/jesusgarcia149/chocolatey-instalar-programas.git
+
+	cd ./js-nodejs
+	npm install
+	cd ../
+	cd ./js-nodejs-first-page
+	npm install
+	cd ../
+	cd ./js-nodejs-mysql-crud
+	npm install
+	cd ../
+
+	echo Todos los programas se han instalado correctamente
+	pause>nul
+	exit
+
+	:error
+	echo la tecla introducida es incorrecta. Vuelva a intentarlo.
+	goto inicio
+
+
+
+
+: comprobacion por partes
+:compPartes
+	cls
+	echo Vamos por partes...
+
+	echo Quieres instalar los siguientes Navegadores...
+	echo brave googlechrome firefox
+	set /p navegadores=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes reproductores multimedia...
+	echo vlc
+	set /p multimedia=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes Programas de Offimatica...
+	echo libreoffice-still sumatrapdf naps2
+	set /p offimatica=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes programas de comprecion...
+	echo 7zip
+	set /p compresion=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes Gestores de Descargas...
+	echo megasync qbittorrent xdm jdownloader
+	set /p descargas=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes runtimes...
+	echo dotnet4.7.2 directx jre8 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019
+	set /p runtimes=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes gadgets y complementos a windows...
+	echo 8gadgetpack clavier-plus clover ditto nettime lockhunter
+	set /p complementos=("y" or "n")
+	cls
+
+	echo Quieres instalar el siguiente Monitoreador de red...
+	echo wnetwatcher
+	set /p red=("y" or "n")
+	cls
+
+	echo Quieres instalar asistencia remota...
+	echo anydesk
+	set /p remota=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes programas de arranque...
+	echo rufus etcher
+	set /p arranque=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes aplicaciones de Mensajeria...
+	echo whatsapp telegram
+	set /p mensajeria=("y" or "n")
+	cls
+
+	echo Quieres instalar Cliente de correo electrinico...
+	echo thunderbird
+	set /p correo=("y" or "n")
+	cls
+
+	echo Quieres instalar los servicios de google...
+	echo googlechrome google-backup-and-sync
+	set /p google=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes Servicios de television...
+	echo pluto-tv
+	set /p television=("y" or "n")
+	cls
+
+	echo Quieres instalar la tienda de chocolatey...
+	echo chocolateygui
+	set /p chocolateygui=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes Programas de Produccion Multimedia...
+	echo gimp inkscape audacity formatfactory
+	set /p produccionMultimedia=("y" or "n")
+	cls
+
+	echo Quieres instalar los siguientes programas para la Programacion...
+	echo sublimetext3 xampp-73 git sudo nodejs-lts
+	set /p programacion=("y" or "n")
+	cls
+
+	echo Quieres instalar mis repositoris de Github...
+	echo @Jesusgarcia149
+	set /p Github=("y" or "n")
+	cls
+
+
+
+
+: instalacion por partes
+:instalacionPartes
+
+if %navegadores%==y (goto navegadores)
+:navegadores
+	cls
+	choco install brave googlechrome firefox -y
+
+if %multimedia%==y (goto multimedia)
+:multimedia
+	cls
+	choco vlc -y
+
+if %offimatica%==y (goto offimatica)
+:offimatica
+	cls
+	choco install libreoffice-still sumatrapdf naps2 -y
+
+if %compresion%==y (goto compresion)
+:compresion
+	cls
+	choco 7zip -y
+
+if %descargas%==y (goto descargas)
+:descargas
+	cls
+	choco install megasync --version 3.1.4 -y
+	choco install qbittorrent xdm jdownloader -y
+
+if %runtimes%==y (goto runtimes)
+:runtimes
+	cls
+	choco install dotnet4.7.2 directx jre8 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+
+if %complementos%==y (goto complementos)
+:complementos
+	cls
+	choco install 8gadgetpack clavier-plus clover ditto nettime lockhunter -y
+
+if %red%==y (goto red)
+:red
+	cls
+	choco install wnetwatcher -y
+
+if %remota%==y (goto remota)
+:remota
+	cls
+	choco install anydesk -y
+
+if %arranque%==y (goto arranque)
+:arranque
+	cls
+	choco rufus etcher -y
+
+if %mensajeria%==y (goto mensajeria)
+:mensajeria
+	cls
+	choco install kb2533623 -y
+	choco install whatsapp telegram -y
+
+if %correo%==y (goto correo)
+:correo
+	cls
+	choco install thunderbird -y
+
+if %google%==y (goto google)
+:google
+	cls
+	choco install googlechrome google-backup-and-sync -y
+
+if %television%==y (goto television)
+:television
+	cls
+	choco install pluto-tv -y
+
+if %chocolateygui%==y (goto chocolateygui)
+:chocolateygui
+	cls
+	choco install chocolateygui -y
+
+if %produccionMultimedia%==y (goto produccionMultimedia)
+:produccionMultimedia
+	cls
+	choco install gimp --version 2.10.14 -y
+	choco install inkscape audacity formatfactory -y
+
+if %programacion%==y (goto programacion)
+:programacion
+	cls
+	choco install sublimetext3 xampp-73 git sudo -y
+	choco install nodejs-lts --version=10.13.0 -y
+
+if %github%==y (goto github)
+:github
+	cls
+	: instalacion de mis repositorios en github
+
+	cd C:\xampp
+	cd htdocs
+
+	mkdir htdocs-files
+
+	MOVE ./dashboard ./htdocs-files
+	MOVE ./img ./htdocs-files
+	MOVE ./webalizer ./htdocs-files
+	MOVE ./xampp ./htdocs-files
+	move ./applications.html ./htdocs-files
+	move ./bitnami.css ./htdocs-files
+	move ./favicon.ico ./htdocs-files
+	#move ./index.php ./htdocs-files
+
+	mkdir apps
+	cd ./apps 
+
+	git clone https://github.com/jesusgarcia149/php-crud.git
+	git clone https://github.com/jesusgarcia149/php-crud-with-images.git 
+	git clone https://github.com/jesusgarcia149/php-auth-system.git
+	git clone https://github.com/jesusgarcia149/php-tienda.git
+	git clone https://github.com/jesusgarcia149/js-planificador-de-rutas.git
+	git clone https://github.com/jesusgarcia149/js-vuejs-cms.git 
+	git clone https://github.com/jesusgarcia149/js-localstorage-crud.git
+	git clone https://github.com/jesusgarcia149/js-pong.git
+	git clone https://github.com/jesusgarcia149/bash-ubuntu-instalar-programas.git
+	git clone https://github.com/jesusgarcia149/js-nodejs.git
+	git clone https://github.com/jesusgarcia149/js-nodejs-first-page.git
+	git clone https://github.com/jesusgarcia149/js-nodejs-mysql-crud.git
+	git clone https://github.com/jesusgarcia149/chocolatey-instalar-programas.git
+
+	cd ./js-nodejs
+	npm install
+	cd ../
+	cd ./js-nodejs-first-page
+	npm install
+	cd ../
+	cd ./js-nodejs-mysql-crud
+	npm install
+	cd ../
+
+
+
+	
 : algunas aplicaciones en las que prodria estar interesado
 : choco install k-litecodecpackfull clementine -y
 
