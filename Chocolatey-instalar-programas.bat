@@ -262,7 +262,7 @@ if %navegadores%==y (goto navegadores)
 if %multimedia%==y (goto multimedia)
 :multimedia
 	cls
-	choco vlc -y
+	choco install vlc -y
 
 if %offimatica%==y (goto offimatica)
 :offimatica
@@ -272,7 +272,7 @@ if %offimatica%==y (goto offimatica)
 if %compresion%==y (goto compresion)
 :compresion
 	cls
-	choco 7zip -y
+	choco install 7zip -y
 
 if %descargas%==y (goto descargas)
 :descargas
@@ -303,7 +303,7 @@ if %remota%==y (goto remota)
 if %arranque%==y (goto arranque)
 :arranque
 	cls
-	choco rufus etcher winsetupfromusb  -y
+	choco install rufus etcher winsetupfromusb -y
 
 if %mensajeria%==y (goto mensajeria)
 :mensajeria
