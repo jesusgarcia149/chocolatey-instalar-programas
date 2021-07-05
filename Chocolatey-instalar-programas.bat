@@ -68,7 +68,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	choco install anydesk -y 
 
 	: usb de arranque
-	choco install rufus etcher -y
+	choco install rufus etcher winsetupfromusb -y
 
 	: complemento para instalar whatsapp
 	choco install kb2533623 -y
@@ -93,7 +93,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	choco install inkscape audacity formatfactory -y
 
 	: programacion
-	choco install sublimetext3 xampp-73 git sudo -y
+	choco install sublimetext3 xampp-73 postman git sudo -y
 	choco install nodejs-lts --version=10.13.0 -y
 
 
@@ -204,7 +204,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	cls
 
 	echo Quieres instalar los siguientes programas de arranque...
-	echo rufus etcher
+	echo rufus etcher winsetupfromusb
 	set /p arranque=("y" or "n")
 	cls
 
@@ -239,7 +239,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	cls
 
 	echo Quieres instalar los siguientes programas para la Programacion...
-	echo sublimetext3 xampp-73 git sudo nodejs-lts
+	echo sublimetext3 xampp-73 postman git sudo nodejs-lts
 	set /p programacion=("y" or "n")
 	cls
 
@@ -303,7 +303,7 @@ if %remota%==y (goto remota)
 if %arranque%==y (goto arranque)
 :arranque
 	cls
-	choco rufus etcher -y
+	choco rufus etcher winsetupfromusb  -y
 
 if %mensajeria%==y (goto mensajeria)
 :mensajeria
@@ -340,7 +340,7 @@ if %produccionMultimedia%==y (goto produccionMultimedia)
 if %programacion%==y (goto programacion)
 :programacion
 	cls
-	choco install sublimetext3 xampp-73 git sudo -y
+	choco install sublimetext3 xampp-73 postman git sudo -y
 	choco install nodejs-lts --version=10.13.0 -y
 
 if %github%==y (goto github)
