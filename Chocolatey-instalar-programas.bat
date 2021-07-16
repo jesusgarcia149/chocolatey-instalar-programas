@@ -58,6 +58,9 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	: runtimes
 	choco install dotnet4.7.2 directx jre8 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
 	
+	: montador de discos
+	choco install wincdemu -y
+
 	: gadgets y complementos a windows
 	choco install 8gadgetpack clavier-plus clover ditto nettime lockhunter -y
 
@@ -188,6 +191,11 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	set /p runtimes=("y" or "n")
 	cls
 
+	echo Quieres instalar el Siguiente Montador de Discos...
+	echo wincdemu
+	set /p discos=("y" or "n")
+	cls
+
 	echo Quieres instalar los siguientes gadgets y complementos a windows...
 	echo 8gadgetpack clavier-plus clover ditto nettime lockhunter
 	set /p complementos=("y" or "n")
@@ -284,6 +292,11 @@ if %runtimes%==y (goto runtimes)
 :runtimes
 	cls
 	choco install dotnet4.7.2 directx jre8 vcredist2005 vcredist2008 vcredist2010 vcredist2012 vcredist2013 vcredist2015 vcredist2017 vcredist2019 -y
+
+if %discos%==y (goto discos)
+:discos
+	cls
+	choco install wincdemu -y
 
 if %complementos%==y (goto complementos)
 :complementos
