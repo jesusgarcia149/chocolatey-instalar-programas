@@ -25,10 +25,22 @@
 
 
 
+
+: set /p chocolatey=Quieres instalar chocolatey? ("y" or "n") ...
+: 
+: instalar chocolatey
+: if %chocolatey%==y (goto chocolatey)
+: 
+: 	:chocolatey
+: 	: Instalar Chocolatey desde CMD sin abrir POWERSHELL
+: 	powershell.exe "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+: 	cls
+
+
+
+
 : Instalar Chocolatey desde CMD sin abrir POWERSHELL
 powershell.exe "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
-
-
 
 
 @echo off
