@@ -110,7 +110,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	choco install inkscape audacity formatfactory -y
 
 	: programacion
-	choco install sublimetext3 xampp-73 postman git sudo -y
+	choco install vscode xampp-73 postman git sudo -y
 	choco install nodejs-lts --version=10.13.0 -y
 
 
