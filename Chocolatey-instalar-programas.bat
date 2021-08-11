@@ -110,7 +110,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	choco install inkscape audacity formatfactory -y
 
 	: programacion
-	choco install vscode xampp-73 postman git sudo -y
+	choco install sublimetext3 vscode xampp-73 postman git sudo -y
 	choco install nodejs-lts --version=10.13.0 -y
 
 
@@ -261,7 +261,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	cls
 
 	echo Quieres instalar los siguientes programas para la Programacion...
-	echo vscode xampp-73 postman git sudo nodejs-lts
+	echo sublimetext3 vscode xampp-73 postman git sudo nodejs-lts
 	set /p programacion=("y" or "n")
 	cls
 
@@ -367,7 +367,7 @@ if %produccionMultimedia%==y (goto produccionMultimedia)
 if %programacion%==y (goto programacion)
 :programacion
 	cls
-	choco install vscode xampp-73 postman git sudo -y
+	choco install sublimetext3 vscode xampp-73 postman git sudo -y
 	choco install nodejs-lts --version=10.13.0 -y
 
 if %github%==y (goto github)
@@ -418,9 +418,6 @@ if %github%==y (goto github)
 
 
 
-	
-: algunas aplicaciones en las que prodria estar interesado
-: choco install k-litecodecpackfull clementine -y
 
 : aplicaciones faltantes en programacion
-: choco install cygwin sublimetext3 -y
+: choco install cygwin -y
