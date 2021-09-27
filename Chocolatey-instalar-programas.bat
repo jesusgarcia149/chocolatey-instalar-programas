@@ -54,7 +54,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 
 	:todo
 	: navegadores
-	choco install brave googlechrome firefox -y
+	choco install googlechrome firefox -y
 
 	: reproductor multimedia
 	choco install vlc -y
@@ -99,8 +99,11 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	: servicios de google
 	choco install googlechrome google-backup-and-sync -y
 
-	: Servicios de television
-	choco install pluto-tv -y
+	: complemento para instalar kodi
+	choco install kb26270838 -y
+
+	: Centro Multimedia
+	choco install kodi -y
 
 	: tienda de chocolatey
 	choco install chocolateygui -y
@@ -176,7 +179,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	echo Vamos por partes...
 
 	echo Quieres instalar los siguientes Navegadores...
-	echo brave googlechrome firefox
+	echo googlechrome firefox
 	set /p navegadores=("y" or "n")
 	cls
 
@@ -245,9 +248,9 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 	set /p google=("y" or "n")
 	cls
 
-	echo Quieres instalar los siguientes Servicios de television...
-	echo pluto-tv
-	set /p television=("y" or "n")
+	echo Quieres instalar el siguiente Centro Multimedia...
+	echo kodi
+	set /p centroMultimedia=("y" or "n")
 	cls
 
 	echo Quieres instalar la tienda de chocolatey...
@@ -279,7 +282,7 @@ if %todo%==y (goto todo) else if %todo%==n (goto compPartes) else (goto error)
 if %navegadores%==y (goto navegadores)
 :navegadores
 	cls
-	choco install brave googlechrome firefox -y
+	choco install googlechrome firefox -y
 
 if %multimedia%==y (goto multimedia)
 :multimedia
@@ -348,10 +351,11 @@ if %google%==y (goto google)
 	cls
 	choco install googlechrome google-backup-and-sync -y
 
-if %television%==y (goto television)
-:television
+if %centroMultimedia%==y (goto centroMultimedia)
+:centroMultimedia
 	cls
-	choco install pluto-tv -y
+	choco install kb26270838 -y
+	choco install kodi --version 18.9 -y
 
 if %chocolateygui%==y (goto chocolateygui)
 :chocolateygui
