@@ -1,0 +1,2 @@
+#reparar sectores dañados del disco (reiniciar el sistema)
+chkdsk c: /f
